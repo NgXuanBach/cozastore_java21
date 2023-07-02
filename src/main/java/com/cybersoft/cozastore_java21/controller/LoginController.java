@@ -25,12 +25,6 @@ public class LoginController {
     JwtHelper jwtHelper;
     @Autowired
     UserServiceImp userServiceImp;
-
-    /*
-        statusCode: 200
-        message: " "
-        data: kiểu gì cũng được (int, json, .... )
-     */
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public ResponseEntity<?> signin(@RequestParam String email, @RequestParam String password) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(email, password);

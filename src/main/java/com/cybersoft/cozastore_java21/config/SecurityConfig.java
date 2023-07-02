@@ -48,7 +48,7 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // khai báo không sử dụng session trong project
                 .and()
                 .authorizeHttpRequests()   // Quy định lại các rule liên quan tới chứng thực cho link được gọi
-                .antMatchers("/signin", "/signup").permitAll()  // cho phép vào luôn ko cần chứng thực
+                .antMatchers("/signin", "/signup", "/demo/**","/category").permitAll()  // cho phép vào luôn ko cần chứng thực
                 .anyRequest().authenticated() // Tất cả các link còn lại cần phải chứng thực
                 .and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)//add filter cua minh truoc filtersecurity
